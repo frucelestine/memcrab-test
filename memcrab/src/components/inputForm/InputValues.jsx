@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import ResultTable from "../MatrixTable/ResultTable";
 
 const InputValues = (props) => {
-  
+
   const drawTable = () => {
     let table = [];
 
@@ -11,7 +11,6 @@ const InputValues = (props) => {
       let children = [];
       let foot = [];
       const total = [];
-      const col = [];
       for (let j = 0; j < props.column; j++) {
         const random = Math.floor(Math.random() * (999 - 100 + 1) + 100);
         children.push(
@@ -75,6 +74,7 @@ const InputValues = (props) => {
       </form>
 
       <ResultTable tab={drawTable()} />
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}><button className="btn btn-primary" onClick={props.handleAdd}>ADD ROW</button><button className="btn btn-danger" onClick={props.handleDelete}>DELETE ROW</button></div>
     </div>
   );
 };
@@ -98,9 +98,17 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(action);
     },
     showChanged: (e) => {
-        const action = { type: "ENTER_SHOW", val: e.target.value };
-        dispatch(action);
-      },
+      const action = { type: "ENTER_SHOW", val: e.target.value };
+      dispatch(action);
+    },
+    handleDelete: () => {
+      const action = { type: "DELETE_ROW", val: 1 };
+      dispatch(action);
+    },
+    handleAdd: () => {
+      const action = { type: "ADD_ROW", val: 1 };
+      dispatch(action);
+    },
   };
 };
 
