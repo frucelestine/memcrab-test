@@ -1,6 +1,6 @@
 {
   "name": "memcrab",
-  "home": "https://github.com/frucelestine/memcrab-test",
+  "homepage": "https://github.com/frucelestine/memcrab-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
