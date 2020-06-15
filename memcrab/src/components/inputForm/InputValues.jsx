@@ -19,7 +19,7 @@ const InputValues = (props) => {
           </>
         );
         total.push(random);
-        console.log(total[0]);
+        
       }
       table.push(
         <tr key={i}>
@@ -28,7 +28,6 @@ const InputValues = (props) => {
         </tr>
       );
     }
-    table.forEach((arr) => arr);
 
     return table;
   };
